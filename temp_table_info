@@ -1,0 +1,64 @@
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(15),
+    address TEXT NOT NULL,
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE wastebins (
+    bin_id SERIAL PRIMARY KEY,
+    type VARCHAR(50) NOT NULL,
+    size VARCHAR(50) NOT NULL,
+    quantity INT NOT NULL,
+    condition VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE distribution_records (
+    record_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(user_id),
+    bin_id INT REFERENCES wastebins(bin_id),
+    distribution_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    condition VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE collection_schedules (
+    schedule_id SERIAL PRIMARY KEY,
+    area VARCHAR(100) NOT NULL,
+    collection_date DATE NOT NULL,
+    collection_time TIME NOT NULL
+);
+
+CREATE TABLE collection_records (
+    record_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(user_id),
+    collection_date DATE NOT NULL,
+    waste_type VARCHAR(50) NOT NULL,
+    quantity DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE payment_info (
+    payment_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(user_id),
+    start_duration DATE NOT NULL,
+    end_duration DATE NOT NULL,
+    calculated_cost DECIMAL,
+    vat DECIMAL,
+    others DECIMAL,
+    total_cost DECIMAL,
+    insurance_company TEXT,
+    insurance_policy_number TEXT,
+    settled TEXT
+);
+
+CREATE TABLE recycling_info (
+    recycling_id SERIAL PRIMARY KEY,
+    waste_type VARCHAR(50) NOT NULL,
+    quantity DECIMAL(10, 2) NOT NULL,
+    collection_date DATE NOT NULL
+);
+
+/*
+One user can have multiple waste_bins registered in his name, at multiple different locations
+*/
