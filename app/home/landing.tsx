@@ -20,32 +20,33 @@ export function Offer() {
     </div>
 }
 
-export function Purpose() {
-    const purposes = [
+export function Reason() {
+    const reasons = [
         {
-            source: "./grad-hat.png",
+            source: "./time.png",
             title: "Timely waste pickup",
-            description: "We provide a maximum of 24 hours wait time from when you notify us to pick up your waste. Besides that, we do routine collection of waste based on the estimated time that your waste might need to be picked up.",
+            description: "We ensure waste pickup within 24 hours of notification, along with routine collections based on the estimated time your waste needs disposal."
         },
         {
-            source: "./book-stack.png",
+            source: "./money.png",
             title: "Fair pricing",
-            description: "Do not let other institutions defraud you with their unfair systems by making you pay more than the services you use. Pay only for your waste pickup."
+            description: "Avoid being overcharged by unfair systems. With us, you pay only for the waste you generate."
         },
         {
-            source: "./office-building.png",
-            title: "State-of-the-Art Facilities",
-            description: "Our school is equipped with modern and innovative facilities, including science and computer labs, libraries, sports grounds, and more. These facilities provide students with the tools they need to excel in their studies and develop their talents."
-        }];
+            source: "./environment.png",
+            title: "Eco-friendly practices",
+            description: "We prioritize environmentally safe waste disposal and recycling methods, ensuring that your waste is handled responsibly to minimize our ecological footprint."
+        }
+    ];
 
-    return (<div id='purpose'>
+    return (<div id='reason'>
         <div id='why-here'>
-            <h2>Why you should choose us</h2>
-            <p>Waste Management Solutions</p>
+            <h1>Why you should choose us</h1>
+            <h2>Waste Management Solutions</h2>
         </div>
         <div id='features'>
-            {purposes.map((obj, idx) => {
-                return <PurposeElement key={idx} source={obj.source} title={obj.title} description={obj.description} />
+            {reasons.map((obj, idx) => {
+                return <ReasonElement key={idx} source={obj.source} title={obj.title} description={obj.description} />
             })}
         </div>
         <EnrollNow />
@@ -59,12 +60,12 @@ function EnrollNow() {
     </div>)
 }
 
-function PurposeElement(obj: {
+function ReasonElement(obj: {
     source: string;
     title: string;
     description: string;
 }) {
-    return (<div className='purpose-elem'>
+    return (<div className='reason-elem'>
         <div className='img-container'><img src={obj.source} alt='dksd'></img></div>
         <h2>{obj.title}</h2>
         <p>{obj.description}</p>

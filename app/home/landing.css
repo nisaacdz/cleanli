@@ -42,10 +42,9 @@
     filter: brightness(100%);
 }
 
-#purpose {
+#reason {
     width: 100%;
-    height: 600px;
-    top: 913px;
+    background-color: rgb(240, 255, 248);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,29 +53,28 @@
 }
 
 #why-here {
+    padding-top: 50px;
+    padding-bottom: 10px;
     width: 457px;
-    height: 63px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
 }
 
-#why-here>h2 {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 30px;
+#why-here>h1 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    line-height: 1.6rem;
 }
 
-#why-here>p {
+#why-here>h2 {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 0.8rem;
 }
 
 #features {
     width: calc(100% - 120px);
-    height: 248px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -107,18 +105,18 @@
     justify-content: space-evenly;
 }
 
-.purpose-elem {
-    width: 420px;
-    height: 224px;
+.reason-elem {
+    width: 100%;
+    height: auto;
 }
 
-.purpose-elem h2 {
+.reason-elem h2 {
     font-size: 24px;
     font-weight: 700;
     line-height: 42px;
 }
 
-.purpose-elem p {
+.reason-elem p {
     font-size: 15px;
     line-height: 24px;
     font-weight: 400;
@@ -303,4 +301,21 @@
     margin-top: 136px;
     margin-bottom: 50px;
     text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    #features {
+        width: calc(100% - 45px);
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 45px;
+    }
+
+    .reason-elem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
