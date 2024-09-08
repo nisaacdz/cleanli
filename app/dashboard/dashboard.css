@@ -1,0 +1,206 @@
+.dashboard-container {
+    margin: 5vh 5vw;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.adder-comp {
+    background-color: #555555;
+    border: 4px solid transparent;
+    box-sizing: border-box;
+    color: white;
+    user-select: none;
+}
+
+.adder-comp:hover {
+    border-color: black;
+}
+
+.adder-comp:active {
+    background-color: white;
+    color: black;
+}
+
+.add-pickup-point {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.add-pickup-point img {
+    background-size: cover;
+    height: 1.5rem;
+    width: auto;
+}
+
+.add-pickup-point p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.profile-container,
+.billing-container,
+.sites-container {
+    padding: 20px;
+    background-color: rgb(242, 242, 242);
+    border-radius: 8px;
+}
+
+.profile-container,
+.billing-container {
+    position: relative;
+}
+
+.profile-item,
+.billing-item {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333333;
+}
+
+.profile-value,
+.billing-value {
+    font-weight: 500;
+    color: #555555;
+}
+
+.sites-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.site-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.site-name {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.site-details {
+    margin-bottom: 15px;
+}
+
+.site-address,
+.site-contact,
+.site-description {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #555555;
+}
+
+.site-bins {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.bins-label {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.3rem;
+    color: #555555;
+    padding: 5px;
+}
+
+.bins-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.bin-item {
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    width: 18rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.add-bin {
+    color: antiquewhite;
+    background-color: #555555;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid transparent;
+}
+
+.add-bin img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.bin-serial {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #2980b9;
+}
+
+.bin-volume,
+.bin-grade {
+    font-size: 1rem;
+    color: #555555;
+}
+
+.edit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 27px;
+    height: 27px;
+    align-self: flex-end;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    background-size: cover;
+}
+
+.edit-button:hover {
+    background-color: lightgray;
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        margin: 3vh 3vw;
+        padding: 15px;
+    }
+
+    .profile-container,
+    .billing-container,
+    .sites-container {
+        padding: 15px;
+    }
+
+    .site-item {
+        padding: 15px;
+    }
+}

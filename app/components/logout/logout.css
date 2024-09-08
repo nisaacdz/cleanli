@@ -1,0 +1,29 @@
+
+.signout-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signout-container button {
+    background-color: green;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.15rem;
+    width: 10rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.signout-container button:hover {
+    border-color: black;
+}
+
+.signout-container button:active {
+    background-color: white;
+}

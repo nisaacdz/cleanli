@@ -1,0 +1,59 @@
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(15),
+    registration_date TIMESTAMP,
+    residences INT
+    billing_info TEXT,
+);
+
+CREATE TABLE residences (
+    residence_id SERIAL PRIMARY KEY,
+    digital_address TEXT,
+    location_address TEXT,
+    verbal_description TEXT,
+    contact TEXT,
+    binlists TEXT,
+);
+
+CREATE TABLE wastebins (
+    bin_id SERIAL PRIMARY KEY,
+    user_id SERIAL PRIMARY KEY,
+    specification TEXT,
+    residence_id INT REFERENCES residences(residence_id),
+    condition INT
+);
+
+CREATE TABLE collection_records (
+    record_id SERIAL PRIMARY KEY,
+    bin_id INT REFERENCES waste_bins(bin_id),
+    collection_date TIMESTAMP,
+);
+
+CREATE TABLE payment_info (
+    payment_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(user_id),
+    start_duration DATE NOT NULL,
+    end_duration DATE NOT NULL,
+    calculated_cost DECIMAL,
+    vat DECIMAL,
+    others DECIMAL,
+    total_cost DECIMAL,
+    insurance_company TEXT,
+    insurance_policy_number TEXT,
+    settled TEXT
+);
+
+CREATE TABLE recycling_info (
+    recycling_id SERIAL PRIMARY KEY,
+    record_id REFERENCES collection_records(record_id),
+    platic DECIMAL,
+    metal DECIMAL,
+    organic DECIMAL,
+    other DECIMAL,
+);
+
+/*
+One user can have multiple waste_bins registered in his name, at multiple different locations
+*/

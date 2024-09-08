@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+main {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+} 
+
+main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

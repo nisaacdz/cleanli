@@ -1,0 +1,53 @@
+Accounts can be created by a user
+A user can add a "collection point"
+A user can request multiple "bins" and place them at registered collection points
+A user can only place bins at his collection points
+A user can have a collection point without having bins registered at those positions (provides his own)
+
+
+**User dashboard**
+User can view collections history
+User can view his collection points
+User can view his registered bins and their collection point
+
+A user can update a collection point to a new location
+A user can update his user-data
+A user can unregister a bin
+A user can move a registered bin to a new location (relocate bin)
+A user can deactivate a collection point (User chooses whether to unregister bins or to relocate them)
+
+Frequent changes of dashboard details can cause problems in service.
+Set fixed days for possible changes
+Set changes to not be immediate
+
+**Admin dashboard**
+View collections history
+View list of all users (and filter by various details such as location, name, bin status etc.)
+View and modify data for any user
+Deactivate a collection point
+
+Modification request to the backend is stored in a separate database for future reference
+Modification request includes information about the authorization that is modifying that data
+e.g. Modify Request { authorization: user XX/Admin(ID), data: user-name, new value: "Yaw Dumeloo" }
+Request is granted to only authorized personnel. System can reject requests if they seem to be cyber attacks.
+
+**User Data**
+name
+contact
+email
+User registered collection points
+User registered bins
+
+**Collection Point**
+digital address (line1)
+Verbal description(line2)
+Address (line3)
+possible contact (if someone needs to be contacted anytime a collection is to be made)
+registered bins (if applicable)
+
+**Bins(company owned/Registered)**
+Bin id
+contractor (person who registers it)
+present location (collection point)
+condition (A, B, C, D might change later)
+
