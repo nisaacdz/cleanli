@@ -1,0 +1,3 @@
+export default function ChooseOnMap() {
+    return (<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50945.232988921714!2d0.42386330350723633!3d6.606545320749919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102725152a227ba1%3A0x9da6ad4a4c9a2107!2sHo!5e1!3m2!1sen!2sgh!4v1725842229765!5m2!1sen!2sgh" width="600" height="450" style={{border: "0"}} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>)
+}

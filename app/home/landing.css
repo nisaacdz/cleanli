@@ -4,52 +4,44 @@
     position: relative;
     background-image: url('/intro.jpg');
     background-size: 100% auto;
-    filter: brightness(50%);
     background-repeat: no-repeat;
 }
 
-#intro img {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: auto;
-    z-index: -1;
-    background-size: 100%;
-}
-
 #intro h1 {
-    color: lightgreen;
-    text-align: center;
+    color: yellowgreen;
     font-size: 2.4rem;
     font-weight: 900;
     line-height: 3rem;
-    padding-top: 5rem;
+    padding-top: 3rem;
     padding-bottom: 1rem;
-    max-width: 50rem;
-    filter: brightness(100%);
+    padding-left: 5rem;
+    padding-right: 5rem;
+    max-width: 60rem;
 }
 
-#intro p {
-    font-size: 2.2rem;
+#intro ul {
+    font-size: 3rem;
+    line-height: 3.2rem;
     font-weight: 900;
     padding-left: 5rem;
     padding-right: 5rem;
-    line-height: 2.5rem;
+    padding-bottom: 1rem;
     color: darkgoldenrod;
-    padding-left: 5rem;
+    font-family: 'Trebuchet MS';
     max-width: 60rem;
-    filter: brightness(100%);
+}
+
+#intro:last-child {
+    margin-bottom: 30px;
 }
 
 #reason {
     width: 100%;
-    background-color: rgb(240, 255, 248);
+    background-color: rgb(230, 245, 235);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 36px;
+    justify-content: space-evenly;
 }
 
 #why-here {
@@ -91,18 +83,19 @@
     justify-content: center;
 }
 
-#enroll {
-    width: 227px;
-    height: 56px;
-    background-color: black;
+#register {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: green;
     color: white;
     border-radius: 10px;
-    font-size: 18px;
-    line-height: 42px;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .reason-elem {
@@ -122,92 +115,90 @@
     font-weight: 400;
 }
 
-#newsletter {
+#objectives {
     width: 100%;
-    height: 748px;
-    background-color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    background-color: rgb(235, 240, 245);
+    padding: 50px;
 }
 
-#newsletter>h2 {
+#objectives>h2 {
+    text-align: center;
     font-weight: 600;
     font-size: 24px;
     line-height: 30px;
 }
 
-#newsletter>p {
+#objectives>p {
+    text-align: center;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
 }
 
-#newsletter-container {
+#objectives-container, #sdg-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    gap: 40px;
-    height: min-content;
-    width: min-content;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.newsletter-elem {
-    position: relative;
-    width: 402px;
-    height: 374px;
-}
-
-.newsletter-elem img {
-    position: absolute;
-    left: 0;
-    right: 0;
+    gap: 50px;
     width: 100%;
-    height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-.newsletter-elem>p {
-    z-index: 544;
-    color: white;
-    height: 100px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    height: auto;
-    width: 300px;
-    line-height: 25px;
-    font-size: 20px;
+.objective-elem h2 {
+    font-size: 1.35rem;
     font-weight: 600;
 }
 
-#newsletter .read-more {
-    width: 146px;
-    height: 56px;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    font-size: 18px;
-    line-height: 42px;
-    font-weight: 600;
-    display: inline-flex;
+#alignments-container {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
+}
+
+.alignment-elem {
+    width: 96px;
+    background-size: cover;
+    background-color: aquamarine;
+}
+
+.sdg {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sdg h2 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.sdg img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.sdg-container img {
+    width: 100px;
+    height: 100px;
 }
 
 #testimony {
     width: 100%;
-    height: 538px;
+    padding: 50px;
     background-color: #052326;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
+    justify-content: space-evenly;
 }
 
 #testimony>img {
@@ -216,93 +207,66 @@
 }
 
 #testimony>.parent-testimony {
-    width: 813px;
-    height: 250px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    gap: 30px;
     color: white;
 }
 
 #testimony>.parent-testimony>.parent-words {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 50px;
+    font-weight: 700;
+    font-size: 2.2rem;
 }
 
 #testimony>.parent-testimony>.parent-name {
-    font-weight: 500px;
-    font-size: 20px;
-    line-height: 24px;
+    font-weight: 400;
+    font-size: 1.1rem;
 }
 
-#invite {
-    height: 356px;
+#services {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 50px;
     background: #006E90;
 }
 
-#invite>#stats {
-    width: calc(100% - 318px);
-    height: 100px;
-    display: flex;
+#services>h2 {
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
     color: white;
 }
 
-#invite>#stats>#invite-msg {
-    width: 50%;
-    height: 100%;
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 50px;
-    padding-right: 100px;
+.services-container {
+    list-style-image: url('/check.png');
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 150px;
+    gap: 30px;
 }
 
-#invite>#stats>#invite-elems-container {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-#invite>#stats>#invite-elems-container h2 {
-    font-weight: 600;
-    font-size: 50px;
-    line-height: 63px;
-}
-
-
-#invite>#stats>#invite-elems-container p {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
+.service-elem {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2rem;
+    color: white;
+    padding-top: 10px;
 }
 
 #motivation {
     width: 100%;
-    height: 592px;
     color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
+    padding: 50px;
 }
 
 #motivation>h2 {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 50px;
-    width: 657px;
-    height: 100px;
-    margin-top: 136px;
-    margin-bottom: 50px;
-    text-align: center;
+    font-weight: 900;
+    font-size: 1.8rem;
 }
-
 
 @media (max-width: 768px) {
     #features {
@@ -317,5 +281,55 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    #testimony {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    #testimony>.parent-testimony {
+        flex-direction: column-reverse;
+    }
+
+    #testimony>.parent-testimony>.parent-words {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+    
+    #testimony>.parent-testimony>.parent-name {
+        font-weight: 400;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #intro h1 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    #intro ul {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    #objectives, #services, #testimony, #motivation {
+        padding: 30px;
+    }
+
+    #objectives-container { 
+        flex-direction: column;
+    }
+
+    #sdg-container {
+        flex-wrap: wrap;
+    }
+
+    #alignments-container {
+        justify-content: space-between;
+    }
+
+    .services-container {
+        padding-left: 50px;
     }
 }

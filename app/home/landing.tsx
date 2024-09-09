@@ -1,23 +1,19 @@
+import Link from 'next/link';
 import './landing.css';
 
 export function Intro() {
     return (<div id="intro">
         <h1>Waste Pickup for a Cleaner, Greener Tomorrow</h1>
-        <p>
-            At cleanli, the environment is our priority. Experience hassle-free waste removal with our reliable and efficient service. We offer flexible schedules, competitive rates, and a commitment to environmental responsibility.
-        </p>
+        <ul>
+            <li>At cleanli, the environment is our priority.</li>
+            <li>
+                Experience hassle-free waste removal with our reliable and efficient service.
+            </li>
+            <li>
+                We offer flexible schedules, competitive rates, and a commitment to environmental responsibility.
+            </li>
+        </ul>
     </div>)
-}
-
-export function Offer() {
-    <div id='offer'>
-        <h1>Services we provide</h1>
-        <p>Domestic waste pickups</p>
-        <p>Community waste pickups</p>
-        <p>Industrial waste pickups</p>
-        <p>Wastebin hiring</p>
-        <p>Garbage Dumpster Giveaway</p>
-    </div>
 }
 
 export function Reason() {
@@ -49,13 +45,13 @@ export function Reason() {
                 return <ReasonElement key={idx} source={obj.source} title={obj.title} description={obj.description} />
             })}
         </div>
-        <EnrollNow />
+        <RegisterNow />
     </div>)
 }
 
-function EnrollNow() {
-    return (<div id='enroll'>
-        <p>Enroll your ward now</p>
+function RegisterNow() {
+    return (<div id='register'>
+        <p>Sign up now</p>
         <img src='./arrow-right.png' alt='arrow right'></img>
     </div>)
 }
@@ -72,87 +68,160 @@ function ReasonElement(obj: {
     </div>)
 }
 
+export function Objectives() {
+    const objectives = [
+        {
+            title: "Mission",
+            body: "To provide eco-friendly, efficient, and responsible waste collection and recycling services that help communities minimize waste, protect the environment, and contribute to a sustainable future."
+        },
+        {
+            title: "Vision",
+            body: "To lead the transition towards a zero-waste society where all waste is either reused, recycled, or sustainably disposed of, ensuring cleaner cities and a healthier planet for future generations."
+        },
+    ];
 
-export function Newsletter() {
-    const newsletters = [
+    const sdgoals = [
         {
-            source: "./news1.png",
-            brief: "New school fees release ahead of next academic year"
+            source: "./sdg11.png",
+            link: "https://sdgs.un.org/goals/goal11",
+            title: "Goal 11"
         },
         {
-            source: "./news2.png",
-            brief: "New school fees release ahead of next academic year"
+            source: "./sdg12.png",
+            link: "https://sdgs.un.org/goals/goal12",
+            title: "Goal 12"
         },
         {
-            source: "./news3.png",
-            brief: "New school fees release ahead of next academic year"
+            source: "./sdg13.png",
+            link: "https://sdgs.un.org/goals/goal13",
+            title: "Goal 13"
+        },
+        {
+            source: "./sdg6.png",
+            link: "https://sdgs.un.org/goals/goal6",
+            title: "Goal 6"
         }
-    ]
-    return (<div id='newsletter'>
-        <h2>Latest Newsletter</h2>
-        <p>Stay up to date with the latest news and events at our school</p>
-        <div id='newsletter-container'>
-            {newsletters.map((letter, idx) => {
-                return (<NewsletterElement key={idx} source={letter.source} brief={letter.brief} />)
+    ];
+
+    const alignments = [
+        {
+            source: "./ipcc.png",
+            brief: "Intergovernmental Panel on Climate Change",
+            link: "https://www.ipcc.ch/",
+        },
+        {
+            source: "./wef.jpg",
+            brief: "World Economic Forum",
+            link: "https://www.weforum.org/agenda/climate-action/",
+        },
+        {
+            source: "./wri.png",
+            brief: "World Resources Institute",
+            link: "https://www.wri.org/climate"
+        },
+        {
+            source: "./sdg.png",
+            brief: "Sustainable Development Goals",
+            link: "https://sdgs.un.org/goals",
+        },
+    ];
+    return (<div id='objectives'>
+        <h2>Our Objectives</h2>
+        <p>Our mission, vision and their alignments with recognized call-to-action's</p>
+        <div id='objectives-container'>
+            {objectives.map((obj, idx) => {
+                return (<ObjectiveElem key={idx} title={obj.title} body={obj.body} />)
             })}
         </div>
-        <div className='read-more'>
-            <p>Read more</p>
-            <img src='./arrow-right.png' alt='arrow right'></img>
+        <div id='sdg-container'>
+            {sdgoals.map((obj, idx) => {
+                return (<SDG key={idx} source={obj.source} link={obj.link} title={obj.title} />)
+            })}
+        </div>
+        <div id='alignments-container'>
+            {alignments.map((obj, idx) => {
+                return (<AlignmentElem key={idx} source={obj.source} brief={obj.brief} link={obj.link} />)
+            })}
         </div>
     </div>)
 }
 
-function NewsletterElement(obj: { source: string, brief: string }) {
-    return (<div className='newsletter-elem'>
-        <img src={obj.source} alt='dljsd'></img>
-        <p>{obj.brief}</p>
+function AlignmentElem(obj: { source: string, brief: string, link: string }) {
+    return (<Link className='alignment-elem' href={obj.link} target="_blank" rel="noopener noreferrer">
+        <img src={obj.source} alt='alignment-img' />
+    </Link>)
+}
+
+function SDG(obj: { source: string, link: string, title: string }) {
+    return (<Link className='sdg' href={obj.link} target="_blank" rel="noopener noreferrer">
+        <img src={obj.source} alt='sdg-img' className='sdg-img' />
+        <h2>{obj.title}</h2>
+    </Link>)
+}
+
+function ObjectiveElem(obj: { title: string, body: string }) {
+    return (<div className='objective-elem'>
+        <h2>{obj.title}</h2>
+        <p>{obj.body}</p>
     </div>)
 }
 
 export function Testimony() {
     return (<div id='testimony'>
         <div className='parent-testimony'>
-            <p className='parent-words'>“ We appreciate the school's emphasis on diversity, equity, and inclusion. Our daughter has been exposed to a wide range of cultures and perspectives. ”</p>
-            <p className='parent-name'>Mr. Nathan Offei Ansah, Parent</p>
+            <h2 className='parent-words'>“ Switching to this service has geen a game changer. No more stressing about missed pickups or dealing with delays. They handle everything smoothly and it's one less thing to worry about. ”</h2>
+            <p className='parent-name'>Kojo Owusu, Ho Bankoe</p>
         </div>
         <img src='./testimony.png' alt='parent photo'></img>
     </div>)
 }
 
 export function Invite() {
-    const stats = [
+    const services = [
         {
-            value: "3000+",
-            description: "Enrolled Students"
+            service: "Domestic Waste Collection",
+            info: ""
         },
         {
-            value: "30",
-            description: "Staff"
+            service: "Community Waste Collection",
+            info: ""
         },
         {
-            value: "10,000",
-            description: "Global Alumni"
+            service: "Industrial Waste Collection",
+            info: ""
+        },
+        {
+            service: "Waste Bin Rental",
+            info: ""
+        },
+        {
+            service: "Waste Bag Sales",
+            info: ""
+        },
+        {
+            service: "Garbage Dumpster Sales",
+            info: ""
         }
-    ]
-    return (<div id='invite'>
-        <div id='stats'>
-            <div id='invite-msg'>Join the winning school now</div>
-            <div id='invite-elems-container'>
-                {stats.map((obj, idx) => {
-                    return (<div key={idx} className='invite-elem'>
-                        <h2>{obj.value}</h2>
-                        <p>{obj.description}</p>
-                    </div>)
-                })}
-            </div>
-        </div>
+    ];
+    return (<div id='services'>
+        <h2>Services we provide</h2>
+        <ul className='services-container'>
+            {services.map((obj, idx) => <ServiceElem key={idx} service={obj.service} info={obj.info} />)}
+        </ul>
     </div>)
 }
 
+function ServiceElem(obj: { service: string, info: string }) {
+    return (<li className='service-elem'>
+        <h2>{obj.service}</h2>
+        <p>{obj.info}</p>
+    </li>)
+}
+
+
 export function Motivation() {
     return (<div id='motivation'>
-        <h2>Enroll your ward to join<br /> over 3000+ successful students</h2>
-        <EnrollNow />
+        <h2>Register now and get 10 free pickups or 3 wastebins rental at discounted price.</h2>
+        <RegisterNow />
     </div>)
 }

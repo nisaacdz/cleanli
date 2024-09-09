@@ -63,7 +63,7 @@ function SiteComponent({ site }: { site: Site }) {
         <ul className="site-details">
             <li className="site-address">
                 <div>Digital Address:</div>
-                <Link href={`https://www.google.com/maps/search/?api=1&query=${site.digital_address}`}>
+                <Link href={`https://www.google.com/maps/search/?api=1&query=${site.digital_address}`} target="_blank" rel="noopener noreferrer">
                     {site.digital_address}
                 </Link>
             </li>

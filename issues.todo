@@ -1,3 +1,1 @@
 1. Reducing the width too small (or using this site on small-width devices) destabilizes the footer, causing some elements to overlap
-2. Padding for the nav buttons are too small (clicking may not hit the text). Make padding larger but maintain the visible coloring.
-

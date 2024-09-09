@@ -1,13 +1,13 @@
 import { Footer } from "./components/footer/footer";
 import { Navigation } from "./components/navbar/navbar";
-import { Invite, Motivation, Newsletter, Reason, Testimony, Intro } from "./home/landing";
+import { Invite, Motivation, Objectives, Reason, Testimony, Intro } from "./home/landing";
 
 export default function Home() {
   return (<main>
     <Navigation selected={0} />
     <Intro />
     <Reason />
-    <Newsletter />
+    <Objectives />
     <Testimony />
     <Invite />
     <Motivation />
